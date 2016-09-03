@@ -3,6 +3,7 @@ package com.nhs.app;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.nhs.app.load.ConvertToJson;
 import com.nhs.app.scraper.ConditionPageScraper;
 import com.nhs.app.scraper.ConditionSubPageScraper;
 
@@ -18,6 +19,11 @@ public class NhsScraperAppConfig {
 	@Bean
 	public ConditionSubPageScraper conditionSubPageScraper() {
 		return new ConditionSubPageScraper();
+	}
+	
+	@Bean
+	public ConvertToJson convertToJson() {
+		return new ConvertToJson();
 	}
 
 
