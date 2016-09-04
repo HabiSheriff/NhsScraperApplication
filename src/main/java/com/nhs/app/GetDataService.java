@@ -1,16 +1,33 @@
 package com.nhs.app;
 
-import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@Service
-public class GetDataService {
+import com.nhs.app.constants.ApplicationConstants;
+import com.nhs.app.exception.ScraperException;
+import com.nhs.app.load.LoadAndSearchDirectory;
+import com.nhs.app.scraper.ConditionPageScraper;
+
+@Component
+public class GetDataService implements ApplicationConstants {
 	
-	public String getData() {
-		String jsonData = null;
+	private static final Logger logger = LoggerFactory.getLogger(GetDataService.class);
+
+	@Autowired
+	ConditionPageScraper conditionPageScraper;
+
+	@Autowired
+	LoadAndSearchDirectory loadAndSearchDirectoryFinal;
+
+	public Boolean getData() throws ScraperException {
 		
-		
-		
-		return jsonData;
+		logger.info(this.getClass().getSimpleName() + " - Get the data from web pages");
+
+		return loadAndSearchDirectoryFinal
+				.load(conditionPageScraper.getConditionsPages(MAIN_NHS_PAGE, CONDITIONS_LI_CSS_STRING));
+
 	}
 
 }

@@ -25,7 +25,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForChickpox() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(CHICKEN_POX_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 		
 		System.out.println("test 2");
 
@@ -39,7 +39,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForThrush() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(THRUSH_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Vaginal thrush - NHS Choices");
@@ -51,7 +51,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForDepression() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(DEPRESSION_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Clinical depression - NHS Choices");
@@ -63,7 +63,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForSciatica() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(SCIATICA_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Sciatica - NHS Choices");
@@ -75,7 +75,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForNoroVirus() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(NOROVIRUS_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Norovirus - NHS Choices");
@@ -87,7 +87,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForDiabetes() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(DIABETES_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Type 2 diabetes - NHS Choices");
@@ -98,7 +98,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForBackPain() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(BACKPAIN_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Back pain - NHS Choices");
@@ -110,7 +110,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForGlandularFever() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(GLANDULARFEVER_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Glandular fever - NHS Choices");
@@ -122,7 +122,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForMenopause() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(MENOPAUSE_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Menopause - NHS Choices");
@@ -133,7 +133,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForKidneyInfection() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(KIDNEYINFECTION_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Kidney infection - NHS Choices");
@@ -145,7 +145,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForMeasles() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(MEASLES_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Measles - NHS Choices");
@@ -157,7 +157,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForDiarrhoea() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(DIARRHOEA_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Diarrhoea - NHS Choices");
@@ -168,7 +168,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForMumps() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(MUMPS_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Mumps - NHS Choices");
@@ -180,7 +180,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForImpetigo() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(IMPETIGO_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Impetigo - NHS Choices");
@@ -191,7 +191,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForSlappedCheekSyndrome() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(SLAPPEDCHEEKSYNDROME_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Slapped cheek syndrome - NHS Choices");
@@ -202,7 +202,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForConstipation() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(CONSTIPATION_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Constipation - NHS Choices");
@@ -214,7 +214,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForAtopicEczema() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(ECZEMAATOPIC_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Atopic eczema - NHS Choices");
@@ -225,7 +225,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForCroup() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(CROUP_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Croup - NHS Choices");
@@ -237,7 +237,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForAttentionDeficitHyperactivityDisorder() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(ADHYPERACTIVITYDISORDER_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Attention deficit hyperactivity disorder (ADHD) - NHS Choices");
@@ -249,7 +249,7 @@ public class ConditionSubPageScraperTest implements ApplicationConstants {
 	public void getConditionsSubPagesContentForCradleCap() throws ScraperException {
 		Assert.assertNotNull(conditionSubPageScraper);
 		Page page = conditionSubPageScraper.getConditionsSubPagesContent(CRADLECAP_NHS_PAGE,
-				CONDITIONS_SUB_PAGE__CSS_STRING);
+				CONDITIONS_SUB_PAGE_CSS_STRING);
 
 		Assert.assertNotNull(page);
 		assertThat(page.getTitle()).isEqualTo("Cradle cap - NHS Choices");

@@ -23,6 +23,7 @@ public class ConditionSubPageScraper extends BaseScraper implements ApplicationC
 
 		Elements titleElement = pageDocument.getDocument().select(TITLE_CSS_STRING);
 
+		page.setUrl(url);
 		page.setTitle(titleElement.text());
 		for (Element element : elements) {
 

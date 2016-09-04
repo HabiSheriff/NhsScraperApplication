@@ -48,7 +48,7 @@ public class ConvertToJsonTest implements ApplicationConstants {
 	}
 
 	@Test
-	public void convertPagesToJsonString() throws ScraperException {
+	public void LoadPagesDirect() throws ScraperException {
 		Assert.assertNotNull(convertToJson);
 
 		List<String> pagesJsonList = convertToJson.convert(pages);

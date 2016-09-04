@@ -2,6 +2,10 @@ package com.nhs.app.constants;
 
 public interface ApplicationConstants {
 	
+	String NHS_HOME_URL = "http://www.nhs.uk";
+	
+	String NHS_INTRODUCTION_URL = "/Pages/Introduction.aspx";
+	
 	String MAIN_NHS_PAGE = "http://www.nhs.uk/Conditions/Pages/hub.aspx";
 	
 	String CHICKEN_POX_NHS_PAGE = "http://www.nhs.uk/conditions/chickenpox/Pages/Introduction.aspx";
@@ -56,8 +60,14 @@ public interface ApplicationConstants {
 	
 	String CONDITIONS_LI_CSS_STRING = ".col-primary-small li a";
 	
-	String CONDITIONS_SUB_PAGE__CSS_STRING = ".main-content p";
+	String CONDITIONS_SUB_PAGE_CSS_STRING = ".main-content p";
 	
 	String CONDITIONS_STRING = "/conditions/";
+	
+	String RELEVANT_MATCH_NOT_FOUND = "No relevant match found. Please search with some other text.";
+	
+	String SEARCH_TEXT_IS_EMPTY = "Search text cannot be empty";
+	
+	String SERVICE_EXCEPTION = "Exception while processing the request - ";
 
 }

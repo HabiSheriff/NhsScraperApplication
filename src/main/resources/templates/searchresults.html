@@ -1,14 +1,17 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>NHS Search Results</title> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+<title>NHS Search Results</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <form action="home.html" th:action="@{/}" th:object="${searchResults}" method="post">
-    	<label for="searchText">Results for search text:</label>
-            <input type="text" th:field="*{searchText}" value="" />
-            <input type="submit" />
-    </form>
+	<form action="home.html" th:action="@{/uihome}" th:object="${searchResults}"
+		method="post">
+		<p
+			th:utext="${#strings.replace( #strings.escapeXml( Search Text : ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}"></p>
+		
+		<p th:utext="#{searchText}"></p>
+		<input type="Submit" value="Back" />
+	</form>
 </body>
 </html>

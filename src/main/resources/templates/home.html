@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <form action="searchResult.html" th:action="@{/search}" th:object="${searchResults}" method="post">
+    <form action="searchResult.html" th:action="@{/uisearch}" th:object="${searchResults}" method="post">
     	<label for="searchText">Search text:</label>
             <input type="text" th:field="*{searchText}" value="" />
             <input type="submit" />

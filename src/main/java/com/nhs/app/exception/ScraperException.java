@@ -1,6 +1,6 @@
 package com.nhs.app.exception;
 
-public class ScraperException extends Exception {
+public class ScraperException extends RuntimeException {
 
 	private static final long serialVersionUID = 8062649343608667178L;
 
