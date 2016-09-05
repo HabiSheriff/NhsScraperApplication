@@ -10,21 +10,18 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
-import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
-import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.Sort;
-import org.apache.lucene.search.TermQuery;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.RAMDirectory;
@@ -77,8 +74,8 @@ public class LoadAndSearchDirectory implements ApplicationConstants {
 				});
 
 				for (Map.Entry<String, String> pageMapEntry : pageMap.entrySet()) {
-					//doc.add(new StringField(pageMapEntry.getKey(), pageMapEntry.getValue(), Field.Store.YES));
-				      doc.add(new TextField(pageMapEntry.getKey(), pageMapEntry.getValue(), Field.Store.YES));
+
+					doc.add(new TextField(pageMapEntry.getKey(), pageMapEntry.getValue(), Field.Store.YES));
 				}
 
 				indexWriter.addDocument(doc);
@@ -123,13 +120,13 @@ public class LoadAndSearchDirectory implements ApplicationConstants {
 
 			logger.info("Number of documents in index :" + numDocs);
 
-			 IndexSearcher indexSearcher = new IndexSearcher(indexReader);
-			//Term term = new Term("pageContent", searchText);		
-			//Query query = new TermQuery(term);
-			
+			IndexSearcher indexSearcher = new IndexSearcher(indexReader);
+			// Term term = new Term("pageContent", searchText);
+			// Query query = new TermQuery(term);
+
 			QueryParser queryParser = new QueryParser("pageContent", new StandardAnalyzer());
 			queryParser.setAllowLeadingWildcard(true);
-			Query query = queryParser.parse("*"+searchText+"*");
+			Query query = queryParser.parse("*" + searchText + "*");
 
 			// TermRangeQuery termRangeQuery = new TermRangeQuery("pageContent",
 			// new BytesRef(searchText),
@@ -140,7 +137,7 @@ public class LoadAndSearchDirectory implements ApplicationConstants {
 			TopDocs topDocs = indexSearcher.search(query, 1, Sort.RELEVANCE);
 
 			ScoreDoc[] hits = topDocs.scoreDocs;
-		
+
 			if (hits.length >= 1) {
 				Document hitDoc = indexSearcher.doc(hits[0].doc);
 				String relevantUrl = hitDoc.get("url");
@@ -165,8 +162,7 @@ public class LoadAndSearchDirectory implements ApplicationConstants {
 
 		} catch (IOException e) {
 			throw new ScraperException("Exception while trying to search the dicectory", e);
-		}
-		catch (ParseException e) {
+		} catch (ParseException e) {
 			throw new ScraperException("Exception while trying to search the dicectory", e);
 		}
 		return searchResults;

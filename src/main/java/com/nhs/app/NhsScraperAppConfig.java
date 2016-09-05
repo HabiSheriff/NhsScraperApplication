@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 import com.nhs.app.load.ConvertToJson;
 import com.nhs.app.load.LoadAndSearchDirectory;
-import com.nhs.app.load.LoadAndSearchDirectory;
 import com.nhs.app.load.LoadDirectory;
 import com.nhs.app.load.SearchDirectory;
 import com.nhs.app.scraper.ConditionPageScraper;
