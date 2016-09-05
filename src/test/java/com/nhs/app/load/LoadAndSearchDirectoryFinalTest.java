@@ -5,6 +5,7 @@ import static com.google.common.truth.Truth.assertThat;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -50,12 +51,12 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 		Assert.assertNotNull(loadAndSearchDirectoryFinal);
 
 		SearchResults searchResults = loadAndSearchDirectoryFinal
-				.search("Chickenpox is a mild and common childhood illness that most children");
+				.search("mild");
 
 		Assert.assertNotNull(searchResults);
 		Assert.assertNotNull(searchResults.getSearchText());
 		assertThat(searchResults.getSearchText())
-				.isEqualTo("Chickenpox is a mild and common childhood illness that most children");
+				.isEqualTo("mild");
 		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
 		assertThat(searchResults.getRelevantMatchUrl())
 				.isEqualTo("http://www.nhs.uk/conditions/chickenpox/Pages/Introduction.aspx");
@@ -80,7 +81,7 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 
 	@Test(expected = NullPointerException.class)
-	public void loadDirectoryWithNullPage() throws ScraperException {
+	public void loadDirectoryWithNullPage() throws ScraperException, ParseException {
 		loadAndSearchDirectoryFinal.search(null);
 
 	}

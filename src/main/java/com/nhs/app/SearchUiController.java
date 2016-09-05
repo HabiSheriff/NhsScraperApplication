@@ -3,6 +3,7 @@ package com.nhs.app;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class SearchUiController implements ApplicationConstants {
 	}
 
 	@RequestMapping("/uisearch")
-	public String search(final HttpServletRequest request, final HttpServletResponse response, Model model) {
+	public String search(final HttpServletRequest request, final HttpServletResponse response, Model model)  {
 
 		logger.info("Start - " + this.getClass().getSimpleName());
 

@@ -1,5 +1,6 @@
 package com.nhs.app;
 
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nhs.app.constants.ApplicationConstants;
 import com.nhs.app.domain.SearchResults;
+import com.nhs.app.exception.ScraperException;
 import com.nhs.app.load.LoadAndSearchDirectory;
 
 @RestController
@@ -26,7 +28,7 @@ public class SearchController implements ApplicationConstants {
 	}
 
 	@RequestMapping("/search/{searchtext}")
-	public String search(@PathVariable("searchtext") String searchText) {
+	public String search(@PathVariable("searchtext") String searchText) throws ScraperException {
 
 		logger.info("Start - " + this.getClass().getSimpleName());
 
