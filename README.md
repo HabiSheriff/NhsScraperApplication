@@ -4,7 +4,7 @@ NhsScraperApplication for text search
 
 ## To download from Git hub:
 
-  Goto command prompt and change directory to any of folder path and Use below command clone from Git 
+   Use below command to clone from Git 
  
   ```git clone git://github.com/HabiSheriff/NhsScraperApplication.git```
  
