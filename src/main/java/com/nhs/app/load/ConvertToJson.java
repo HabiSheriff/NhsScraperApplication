@@ -22,6 +22,13 @@ import com.nhs.app.exception.ScraperException;
 @Component
 public class ConvertToJson {
 
+	/**
+	 * convert {@link List<Page> pages} - Converts list of pages into a Json string.
+	 * 
+	 * @param List<Page> pages - takes inputs as list of pages
+	 *            
+	 * @return List<String> - returns as list of strings 
+	 */
 	public List<String> convert(List<Page> pages) throws ScraperException {
 
 		Objects.requireNonNull(pages, "Pages object cannot be null");

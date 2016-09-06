@@ -95,5 +95,27 @@ public class SearchControllerTest implements ApplicationConstants {
 		assertThat(searchUrl.getBody().toString())
 				.isEqualTo("http://www.nhs.uk/conditions/Attention-deficit-hyperactivity-disorder/Pages/Introduction.aspx");
 	}
+	@Test
+	public void searchForFullTextImpetigo() throws ScraperException {
+		ResponseEntity<String> searchUrl = (ResponseEntity<String>) this.restTemplate
+				.getForEntity("/search/{searchtext}", String.class, "Symptoms for impetigo");
+
+		System.out.println(searchUrl);
+		Assert.notNull(searchUrl);
+		assertThat(searchUrl.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(searchUrl.getBody().toString())
+				.isEqualTo("http://www.nhs.uk/conditions/impetigo/Pages/Introduction.aspx");
+	}
+	@Test
+	public void searchForFullTextMeasles() throws ScraperException {
+		ResponseEntity<String> searchUrl = (ResponseEntity<String>) this.restTemplate
+				.getForEntity("/search/{searchtext}", String.class, "Treatment for Measles");
+
+		System.out.println(searchUrl);
+		Assert.notNull(searchUrl);
+		assertThat(searchUrl.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(searchUrl.getBody().toString())
+				.isEqualTo("http://www.nhs.uk/conditions/measles/Pages/Introduction.aspx");
+	}
 
 }

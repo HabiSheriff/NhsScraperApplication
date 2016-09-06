@@ -13,6 +13,13 @@ import com.nhs.app.exception.ScraperException;
 
 public class BaseScraper {
 
+	/**
+	 * convertToPageDocument - converts given url into a pageDocument
+	 * 
+	 * @param String url - takes inputs as NHS home page url 
+	 *            
+	 * @return PageDocument - returns as PageDocument 
+	 */
 	public PageDocument convertToPageDocument(String url) throws ScraperException {
 
 		PageDocument pageDocument = null;
@@ -28,14 +35,6 @@ public class BaseScraper {
 
 	}
 	
-	public String getElementValueAsString(Document document, String cssQuery) throws ScraperException {
-
-		Elements elements = document.select(cssQuery);
-		if (elements.isEmpty()) {
-			throw new ScraperException("Unable to get element for '" + cssQuery + "'");
-		}
-		return elements.get(0).ownText();
-
-	}
+	
 
 }

@@ -19,13 +19,13 @@ public class GetDataService implements ApplicationConstants {
 	ConditionPageScraper conditionPageScraper;
 
 	@Autowired
-	LoadAndSearchDirectory loadAndSearchDirectoryFinal;
+	LoadAndSearchDirectory loadAndSearchDirectory;
 
 	public Boolean getData() throws ScraperException {
 		
 		logger.info(this.getClass().getSimpleName() + " - Get the data from web pages");
 
-		return loadAndSearchDirectoryFinal
+		return loadAndSearchDirectory
 				.load(conditionPageScraper.getConditionsPages(MAIN_NHS_PAGE, CONDITIONS_LI_CSS_STRING));
 
 	}

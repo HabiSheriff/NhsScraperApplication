@@ -23,10 +23,10 @@ import com.nhs.app.scraper.ConditionPageScraper;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { NhsScraperAppConfig.class })
-public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
+public class LoadAndSearchDirectoryTest implements ApplicationConstants {
 
 	@Autowired
-	private LoadAndSearchDirectory loadAndSearchDirectoryFinal;
+	private LoadAndSearchDirectory loadAndSearchDirectory;
 
 	@Autowired
 	ConditionPageScraper conditionPageScraper;
@@ -34,18 +34,8 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 
 	@Before
 	public void setup() throws ScraperException {
-
-		/*pages = new ArrayList<>();
-
-		Page page1 = new Page();
-		page1.setPageContent(
-				"Chickenpox is a mild and common childhood illness that most children catch at some point.");
-		page1.setTitle("Chickenpox");
-		page1.setUrl("http://www.nhs.uk/conditions/chickenpox/Pages/Introduction.aspx");
-		pages.add(page1);
-		Assert.assertTrue(loadAndSearchDirectoryFinal.load(pages));*/
-
-		Assert.assertTrue(loadAndSearchDirectoryFinal
+		
+		Assert.assertTrue(loadAndSearchDirectory
 						.load(conditionPageScraper.getConditionsPages(MAIN_NHS_PAGE, CONDITIONS_LI_CSS_STRING)));
 
 	}
@@ -53,9 +43,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	@Test
 	public void searchForMild() throws ScraperException {
 
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("mild");
 
 		Assert.assertNotNull(searchResults);
@@ -71,9 +61,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	@Test
 	public void searchForFullTextChickenpox() throws ScraperException {
 
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Chickenpox is a mild and common childhood illness that most children catch at some point.");
 
 		Assert.assertNotNull(searchResults);
@@ -87,9 +77,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 
 	@Test
 	public void searchForFullTextThrush() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("thrush");
 
 		Assert.assertNotNull(searchResults);
@@ -104,9 +94,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextDepressionSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of depression");
 
 		Assert.assertNotNull(searchResults);
@@ -120,9 +110,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextDepression() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("treatment for depression");
 
 		Assert.assertNotNull(searchResults);
@@ -135,9 +125,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextSciatica() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("sciatica");
 
 		Assert.assertNotNull(searchResults);
@@ -150,9 +140,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextSciaticaSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms for sciatica");
 
 		Assert.assertNotNull(searchResults);
@@ -166,9 +156,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextNorovirus() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("norovirus");
 
 		Assert.assertNotNull(searchResults);
@@ -181,9 +171,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextNorovirusSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms for Norovirus");
 
 		Assert.assertNotNull(searchResults);
@@ -196,9 +186,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextDiabetes() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Diabetes");
 
 		Assert.assertNotNull(searchResults);
@@ -211,9 +201,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextDiabetesSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of Diabetes");
 
 		Assert.assertNotNull(searchResults);
@@ -227,9 +217,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextBackPain() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Back Pain");
 
 		Assert.assertNotNull(searchResults);
@@ -242,9 +232,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextBackPainSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of Back-Pain");
 
 		Assert.assertNotNull(searchResults);
@@ -258,9 +248,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextGlandularFever() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Glandular Fever");
 
 		Assert.assertNotNull(searchResults);
@@ -273,9 +263,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextGlandularFeverSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of Glandular Fever");
 
 		Assert.assertNotNull(searchResults);
@@ -289,9 +279,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextMenopause() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Menopause");
 
 		Assert.assertNotNull(searchResults);
@@ -304,9 +294,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextMenopauseSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of Menopause");
 
 		Assert.assertNotNull(searchResults);
@@ -320,9 +310,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextKidneyInfection() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Kidney Infection");
 
 		Assert.assertNotNull(searchResults);
@@ -335,9 +325,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextKidneyinfectionSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of Kidney Infection");
 
 		Assert.assertNotNull(searchResults);
@@ -351,9 +341,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextMeasles() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Measles");
 
 		Assert.assertNotNull(searchResults);
@@ -366,9 +356,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextMeaslesSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of Measles");
 
 		Assert.assertNotNull(searchResults);
@@ -381,9 +371,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	} 
 	@Test
 	public void searchForFullTextDiarrhoeaSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms of Diarrhoea");
 
 		Assert.assertNotNull(searchResults);
@@ -397,9 +387,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextDiarrhoea() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Diarrhoea");
 
 		Assert.assertNotNull(searchResults);
@@ -415,9 +405,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextMumps() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("mumps");
 
 		Assert.assertNotNull(searchResults);
@@ -430,9 +420,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextImpetigoSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms for Impetigo");
 
 		Assert.assertNotNull(searchResults);
@@ -446,9 +436,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextImpetigo() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Impetigo");
 
 		Assert.assertNotNull(searchResults);
@@ -461,9 +451,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextSlappedCheekSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms for slapped cheek syndrome");
 
 		Assert.assertNotNull(searchResults);
@@ -478,9 +468,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextSlappedCheek() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("slapped cheek");
 
 		Assert.assertNotNull(searchResults);
@@ -493,9 +483,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextConstipation() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Constipation");
 
 		Assert.assertNotNull(searchResults);
@@ -510,9 +500,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextEczemaatopic() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Eczema atopic");
 
 		Assert.assertNotNull(searchResults);
@@ -527,9 +517,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextCroup() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Croup");
 
 		Assert.assertNotNull(searchResults);
@@ -542,9 +532,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextCroupSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms for Croup");
 
 		Assert.assertNotNull(searchResults);
@@ -558,9 +548,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextAttentionDeficitHyperactivityDisorder() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Attention Deficit Hyperactivity Disorder");
 
 		Assert.assertNotNull(searchResults);
@@ -573,9 +563,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextAttentionDeficitHyperactivityDisorderSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms for Attention Deficit Hyperactivity Disorder");
 
 		Assert.assertNotNull(searchResults);
@@ -589,9 +579,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextCradleCap() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("cradle cap");
 
 		Assert.assertNotNull(searchResults);
@@ -604,9 +594,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}
 	@Test
 	public void searchForFullTextCradleCapSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("Symptoms for cradle cap");
 
 		Assert.assertNotNull(searchResults);
@@ -621,9 +611,9 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	
 	@Test
 	public void searchForFullTextCradleCapNotFound() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+		Assert.assertNotNull(loadAndSearchDirectory);
 
-		SearchResults searchResults = loadAndSearchDirectoryFinal
+		SearchResults searchResults = loadAndSearchDirectory
 				.search("cradleeee");
 
 		Assert.assertNotNull(searchResults);
@@ -636,7 +626,7 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 	}  
 	@Test(expected = NullPointerException.class)
 	public void loadDirectoryWithNullPage() throws ScraperException, ParseException {
-		loadAndSearchDirectoryFinal.search(null);
+		loadAndSearchDirectory.search(null);
 
 	}
 

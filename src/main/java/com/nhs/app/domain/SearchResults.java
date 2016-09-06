@@ -2,6 +2,11 @@ package com.nhs.app.domain;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * @author HabiSheriff
+ *
+ */
 public class SearchResults implements Serializable{
 	
 

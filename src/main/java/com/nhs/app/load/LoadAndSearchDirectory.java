@@ -47,6 +47,13 @@ public class LoadAndSearchDirectory implements ApplicationConstants {
 
 	private Directory directory = new RAMDirectory();
 
+	/**
+	 * Load {@link List<Page> pages} into RAMDirectory using IndexWriter
+	 * 
+	 * @param List<Page> pages
+	 *            list of pages
+	 * @return returns boolean
+	 */
 	public Boolean load(List<Page> pages) throws ScraperException {
 
 		logger.info("Load index ...");
@@ -95,6 +102,13 @@ public class LoadAndSearchDirectory implements ApplicationConstants {
 		return true;
 	}
 
+	/**
+	 * search  - Search the given text and returns the SearchResults.
+	 * 
+	 * @param String searchText
+	 *            searchText can be any text including spaces example "Symptoms of chickenpox", "cradle-crap"
+	 * @return SearchResults consists of relevant url of the given search text
+	 */
 	public SearchResults search(String searchText) throws ScraperException {
 
 		logger.info("Search the text in index :" + searchText);
@@ -121,19 +135,11 @@ public class LoadAndSearchDirectory implements ApplicationConstants {
 			logger.info("Number of documents in index :" + numDocs);
 
 			IndexSearcher indexSearcher = new IndexSearcher(indexReader);
-			// Term term = new Term("pageContent", searchText);
-			// Query query = new TermQuery(term);
-
+			
 			QueryParser queryParser = new QueryParser("pageContent", new StandardAnalyzer());
 			queryParser.setAllowLeadingWildcard(true);
 			Query query = queryParser.parse("*" + searchText + "*");
 
-			// TermRangeQuery termRangeQuery = new TermRangeQuery("pageContent",
-			// new BytesRef(searchText),
-			// new BytesRef(searchText), true, false);
-			// TopDocs topDocs = indexSearcher.search(query, 1, Sort.RELEVANCE);
-			// TopDocs topDocs = indexSearcher.search(termRangeQuery, 1,
-			// Sort.RELEVANCE);
 			TopDocs topDocs = indexSearcher.search(query, 1, Sort.RELEVANCE);
 
 			ScoreDoc[] hits = topDocs.scoreDocs;
