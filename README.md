@@ -25,12 +25,11 @@ NhsScraperApplication for text search
   
   ```http://localhost:8080/search/< Any text with including spaces>```
   
-  http://localhost:8080/search/treatment for chickenpox
+  http://localhost:8080/search/```treatment for chickenpox```
      
-  http://localhost:8080/search/symptoms of thrush
+  http://localhost:8080/search/```symptoms of thrush```
     
-## List of Classes and its functionalities
-##This NHSScraper Application has below classes:
+## This NHSScraper Application has below classes:
 
 ## Sequence of execution flow:
 
@@ -44,7 +43,7 @@ LoadAndSearchDirectory - Class to load data into RAMdirectory using index writer
 
 SearchController - This is rest service class, which get called every time, when we invoke the url to search.
 
-List of other important classes used in this NHSScraper Application:
+## List of other important classes used in this NHSScraper Application:
 
 BaseScraper - Base scraper class to parse the web page and convert into Document
 
