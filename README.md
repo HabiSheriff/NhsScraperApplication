@@ -31,9 +31,9 @@ NHSScraperApplication is a REST service that scrapes the nhsChoice website ```(h
   
   ```http://localhost:8080/search/< Any text with including spaces>```
   
-  http://localhost:8080/search/```treatment for chickenpox```
+  http://localhost:8080/search/```treatment for thrush```
      
-  http://localhost:8080/search/```symptoms of thrush```
+  http://localhost:8080/search/```what is the symptoms of chickenpox```
   
   ![Image of Test case1](https://github.com/HabiSheriff/Documentation/blob/master/Images/NHSScraperApplicationTestCase1.jpg)
   
