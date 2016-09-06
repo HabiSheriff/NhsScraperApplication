@@ -11,13 +11,19 @@ NHSScraperApplication is a REST service that scrapes the nhsChoice website ```(h
 ## To execute the tests in the NHSScraper App:
   
   ```mvn clean test```
+  
+  ![Image of mvn test](https://github.com/HabiSheriff/Documentation/blob/master/Images/NHSScraperAppmvntest.jpg)
 
 ## To start NHSScraper App server:
 
    ```mvn spring-boot:run```
    
+   ![Image of mvn spring-boot:run](https://github.com/HabiSheriff/Documentation/blob/master/Images/NHSScraperApplicationmvnspringboot.jpg)
+   
    Check the server running
    In browser, try http://localhost:8080
+   
+   ![Image of server start up](https://github.com/HabiSheriff/Documentation/blob/master/Images/NHSScraperApplicationStartupTest.jpg)
 
 ## To test searches in browser:
 
@@ -28,6 +34,10 @@ NHSScraperApplication is a REST service that scrapes the nhsChoice website ```(h
   http://localhost:8080/search/```treatment for chickenpox```
      
   http://localhost:8080/search/```symptoms of thrush```
+  
+  ![Image of Test case1](https://github.com/HabiSheriff/Documentation/blob/master/Images/NHSScraperApplicationTestCase1.jpg)
+  
+  ![Image of Test case2](https://github.com/HabiSheriff/Documentation/blob/master/Images/NHSScraperApplicationTestCase2.jpg)
     
 ## This NHSScraper Application has below classes:
 
