@@ -1,25 +1,25 @@
-#####NhsScraperApplication
+## NhsScraperApplication
 
 NhsScraperApplication for text search 
 
-#####To download from Git hub:
+## To download from Git hub:
 
   Goto command prompt and change directory to any of folder path and Use below command clone from Git 
  
   ```git clone git://github.com/HabiSheriff/NhsScraperApplication.git```
  
-#####To execute the tests in the NHSScraper App:
+## To execute the tests in the NHSScraper App:
   
   ```mvn clean test```
 
-##### To start NHSScraper App server
+## To start NHSScraper App server
 
    ```mvn spring-boot:run```
    
    Check the server running
    In browser, try http://localhost:8080
 
-#####To test searches in browser
+## To test searches in browser
 
   In browser try, below urls
   
@@ -29,7 +29,7 @@ NhsScraperApplication for text search
      
   http://localhost:8080/search/symptoms of thrush
     
-#####List of Classes and its functionalities
+## ist of Classes and its functionalities
 #####This NHSScraper Application has below classes:
 
 ##### Sequence of execution flow:
@@ -66,7 +66,7 @@ ScraperException - Exception class
 
 NhsScraperAppConfig - configuration class 
   
-#####Technology Stack
+## Technology Stack
 
 1.Java 8
 
@@ -79,7 +79,7 @@ NhsScraperAppConfig - configuration class
 5.JSoup - For parsing the web page
   
        
-#####Assumptions
+## Assumptions
   
   1.This NHSScraperApplication includes only 22 sub page URL contents (Common conditions and Childhood conditions)
   
