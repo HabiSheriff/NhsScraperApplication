@@ -1,6 +1,6 @@
-## NhsScraperApplication
+## NHSScraperApplication
 
-NhsScraperApplication for text search 
+NHSScraperApplication for text search 
 
 ## To download from Git hub:
 
