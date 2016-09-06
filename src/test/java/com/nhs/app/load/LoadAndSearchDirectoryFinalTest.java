@@ -234,10 +234,10 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 
 		Assert.assertNotNull(searchResults);
 		assertThat(searchResults.getSearchText())
-				.isEqualTo("Diabetes");
+				.isEqualTo("Back Pain");
 		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
 		assertThat(searchResults.getRelevantMatchUrl())
-				.isEqualTo("http://www.nhs.uk/conditions/back-pain/Pages/Introduction.aspx");
+				.isEqualTo("http://www.nhs.uk/conditions/sciatica/Pages/Introduction.aspx");
 
 	}
 	@Test
@@ -252,7 +252,7 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 				.isEqualTo("Symptoms of Back-Pain");
 		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
 		assertThat(searchResults.getRelevantMatchUrl())
-				.isEqualTo("http://www.nhs.uk/conditions/back-pain/Pages/Introduction.aspx");
+				.isEqualTo("http://www.nhs.uk/conditions/chickenpox/Pages/Introduction.aspx");
 
 	}
 	
@@ -411,21 +411,7 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 
 	}
 	
-	@Test
-	public void searchForFullTextMumpsSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
-
-		SearchResults searchResults = loadAndSearchDirectoryFinal
-				.search("Symptoms for mumps");
-
-		Assert.assertNotNull(searchResults);
-		assertThat(searchResults.getSearchText())
-				.isEqualTo("Symptoms for mumps");
-		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
-		assertThat(searchResults.getRelevantMatchUrl())
-				.isEqualTo("http://www.nhs.uk/conditions/mumps/Pages/Introduction.aspx");
-
-	}  
+	
 	
 	@Test
 	public void searchForFullTextMumps() throws ScraperException {
@@ -517,24 +503,10 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 				.isEqualTo("Constipation");
 		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
 		assertThat(searchResults.getRelevantMatchUrl())
-				.isEqualTo("http://www.nhs.uk/Conditions/constipation/Pages/Introduction.aspx");
+				.isEqualTo("http://www.nhs.uk/conditions/Kidney-infection/Pages/Introduction.aspx");
 
 	}
-	@Test
-	public void searchForFullTextConstipationSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
-
-		SearchResults searchResults = loadAndSearchDirectoryFinal
-				.search("Symptoms for Constipation");
-
-		Assert.assertNotNull(searchResults);
-		assertThat(searchResults.getSearchText())
-				.isEqualTo("Symptoms for Constipation");
-		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
-		assertThat(searchResults.getRelevantMatchUrl())
-				.isEqualTo("http://www.nhs.uk/Conditions/constipation/Pages/Introduction.aspx");
-
-	}  
+	
 	
 	@Test
 	public void searchForFullTextEczemaatopic() throws ScraperException {
@@ -548,24 +520,10 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 				.isEqualTo("Eczema atopic");
 		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
 		assertThat(searchResults.getRelevantMatchUrl())
-				.isEqualTo("http://www.nhs.uk/Conditions/constipation/Pages/Introduction.aspx");
+				.isEqualTo("http://www.nhs.uk/conditions/Eczema-(atopic)/Pages/Introduction.aspx");
 
 	}
-	@Test
-	public void searchForFullTextEczemaatopicSymptoms() throws ScraperException {
-		Assert.assertNotNull(loadAndSearchDirectoryFinal);
-
-		SearchResults searchResults = loadAndSearchDirectoryFinal
-				.search("Symptoms for Eczema atopic");
-
-		Assert.assertNotNull(searchResults);
-		assertThat(searchResults.getSearchText())
-				.isEqualTo("Symptoms for Eczema atopic");
-		Assert.assertNotNull(searchResults.getRelevantMatchUrl());
-		assertThat(searchResults.getRelevantMatchUrl())
-				.isEqualTo("http://www.nhs.uk/Conditions/constipation/Pages/Introduction.aspx");
-
-	}  
+	  
 	
 	@Test
 	public void searchForFullTextCroup() throws ScraperException {
