@@ -1,6 +1,6 @@
 ## NHSScraperApplication
 
-NHSScraperApplication for text search 
+NHSScraperApplication is a REST service that scrapes the nhsChoice website ```(http://www.nhs.uk/Conditions/Pages/hub.aspx)``` and cache the condition pages and their subpages contents. And It has a search service to return appropriate url based on the given search text.
 
 ## To download from Git hub:
 
@@ -41,7 +41,7 @@ NHSScraperApplication for text search
 
 4. LoadAndSearchDirectory - Class to load data into RAMdirectory using index writer and Search the sub page url content based on the given search text
 
-5. SearchController - This is rest service class, which get called every time, when we invoke the url to search.
+5. SearchController - This is REST service class, which get called every time, when we invoke the url to search.
 
 ## List of other important classes used in this NHSScraper Application:
 
@@ -88,6 +88,8 @@ NHSScraperApplication for text search
 4. Jackson - JSON conversion
 
 5. JSoup - For parsing the web page
+
+6. Apache Lucene 6.2.0  - for full text search
   
        
 ## Assumptions:
