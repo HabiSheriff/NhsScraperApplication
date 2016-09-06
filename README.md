@@ -29,10 +29,10 @@ NhsScraperApplication for text search
      
   http://localhost:8080/search/symptoms of thrush
     
-## ist of Classes and its functionalities
-#####This NHSScraper Application has below classes:
+## List of Classes and its functionalities
+##This NHSScraper Application has below classes:
 
-##### Sequence of execution flow:
+## Sequence of execution flow:
 
 Application - void main class to start spring boot server.
 
