@@ -1,19 +1,20 @@
 #####NhsScraperApplication
+
 NhsScraperApplication for text search 
 
 #####To download from Git hub:
 
   Goto command prompt and change directory to any of folder path and Use below command clone from Git 
  
-  ** git clone git://github.com/HabiSheriff/NhsScraperApplication.git **
+  ```git clone git://github.com/HabiSheriff/NhsScraperApplication.git```
  
 #####To execute the tests in the NHSScraper App:
   
-  ** mvn clean test **
+  ```mvn clean test```
 
 ##### To start NHSScraper App server
 
-   ** mvn spring-boot:run **
+   ```mvn spring-boot:run```
    
    Check the server running
    In browser, try http://localhost:8080
@@ -22,7 +23,7 @@ NhsScraperApplication for text search
 
   In browser try, below urls
   
-  ** http://localhost:8080/search/< Any text with including spaces> **
+  ```http://localhost:8080/search/< Any text with including spaces>```
   
   http://localhost:8080/search/treatment for chickenpox
      
