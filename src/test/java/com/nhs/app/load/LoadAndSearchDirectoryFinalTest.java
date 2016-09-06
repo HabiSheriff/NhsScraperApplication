@@ -659,6 +659,23 @@ public class LoadAndSearchDirectoryFinalTest implements ApplicationConstants {
 				.isEqualTo("http://www.nhs.uk/conditions/cradle-cap/Pages/Introduction.aspx");
 
 	}  
+	
+	
+	@Test
+	public void searchForFullTextCradleCapNotFound() throws ScraperException {
+		Assert.assertNotNull(loadAndSearchDirectoryFinal);
+
+		SearchResults searchResults = loadAndSearchDirectoryFinal
+				.search("cradleeee");
+
+		Assert.assertNotNull(searchResults);
+		assertThat(searchResults.getSearchText())
+				.isEqualTo("cradleeee");
+		Assert.assertNull(searchResults.getRelevantMatchUrl());
+		assertThat(searchResults.getMessage()).isEqualTo(RELEVANT_MATCH_NOT_FOUND);
+		
+
+	}  
 	@Test(expected = NullPointerException.class)
 	public void loadDirectoryWithNullPage() throws ScraperException, ParseException {
 		loadAndSearchDirectoryFinal.search(null);

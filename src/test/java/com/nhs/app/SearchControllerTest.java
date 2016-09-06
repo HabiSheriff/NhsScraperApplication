@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
 
 import com.nhs.app.constants.ApplicationConstants;
+import com.nhs.app.domain.SearchResults;
+import com.nhs.app.exception.ScraperException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
@@ -45,6 +47,53 @@ public class SearchControllerTest implements ApplicationConstants {
 		assertThat(searchUrl.getStatusCode()).isEqualTo(HttpStatus.OK);
 		assertThat(searchUrl.getBody().toString()).isEqualTo(RELEVANT_MATCH_NOT_FOUND);
 
+	}
+	
+	@Test
+	public void searchForTextTyphoidNotFound() {
+		ResponseEntity<String> searchUrl = (ResponseEntity<String>) this.restTemplate
+				.getForEntity("/search/{searchtext}", String.class, "Typhoid");
+
+		System.out.println(searchUrl);
+		Assert.notNull(searchUrl);
+		assertThat(searchUrl.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(searchUrl.getBody().toString()).isEqualTo(RELEVANT_MATCH_NOT_FOUND);
+
+	}
+	
+	@Test
+	public void searchForFullTextCradleCap() throws ScraperException {
+		ResponseEntity<String> searchUrl = (ResponseEntity<String>) this.restTemplate
+				.getForEntity("/search/{searchtext}", String.class, "cradle cap");
+
+		System.out.println(searchUrl);
+		Assert.notNull(searchUrl);
+		assertThat(searchUrl.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(searchUrl.getBody().toString())
+				.isEqualTo("http://www.nhs.uk/conditions/cradle-cap/Pages/Introduction.aspx");
+	}
+	
+	@Test
+	public void searchForFullTextCroup() throws ScraperException {
+		ResponseEntity<String> searchUrl = (ResponseEntity<String>) this.restTemplate
+				.getForEntity("/search/{searchtext}", String.class, "Symptoms for Croup");
+
+		System.out.println(searchUrl);
+		Assert.notNull(searchUrl);
+		assertThat(searchUrl.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(searchUrl.getBody().toString())
+				.isEqualTo("http://www.nhs.uk/conditions/croup/Pages/Introduction.aspx");
+	}
+	@Test
+	public void searchForFullTextADHD() throws ScraperException {
+		ResponseEntity<String> searchUrl = (ResponseEntity<String>) this.restTemplate
+				.getForEntity("/search/{searchtext}", String.class, "Symptoms for Attention Deficit Hyperactivity Disorder");
+
+		System.out.println(searchUrl);
+		Assert.notNull(searchUrl);
+		assertThat(searchUrl.getStatusCode()).isEqualTo(HttpStatus.OK);
+		assertThat(searchUrl.getBody().toString())
+				.isEqualTo("http://www.nhs.uk/conditions/Attention-deficit-hyperactivity-disorder/Pages/Introduction.aspx");
 	}
 
 }

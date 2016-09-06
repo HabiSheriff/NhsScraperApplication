@@ -5,11 +5,12 @@ NhsScraperApplication for text search
 
 1) Create new folder in Java work space
 
-2) Goto command prompt and change directory to the new created folder path
+2) Goto command prompt and change directory to the newly created folder path
   
   Use below commands to init and clone from Git
   
   git init
+  
   git clone git://github.com/HabiSheriff/NhsScraperApplication.git
  
 # To run a mvn build commands
@@ -61,7 +62,7 @@ This NHSScraper Application has below classes
         
 # Assumptions
 
-  1) This NHSScraperApplication includes only 22 sub page URL contents (Common conditions and Childhood conditions)
+  1) This application takes data from  NHS site (http://www.nhs.uk/Conditions/Pages/hub.aspx) and its sub pages.
   
-  2) This application takes data from  NHS site (http://www.nhs.uk/Conditions/Pages/hub.aspx) and its sub pages, in case of site in availability, we may receive page not found error.
-     
+  2) This NHSScraperApplication includes only 22 sub page URL contents (Common conditions and Childhood conditions)
+  
