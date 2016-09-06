@@ -12,14 +12,14 @@ NHSScraperApplication for text search
   
   ```mvn clean test```
 
-## To start NHSScraper App server
+## To start NHSScraper App server:
 
    ```mvn spring-boot:run```
    
    Check the server running
    In browser, try http://localhost:8080
 
-## To test searches in browser
+## To test searches in browser:
 
   In browser try, below urls
   
@@ -33,54 +33,70 @@ NHSScraperApplication for text search
 
 ## Sequence of execution flow:
 
-Application - void main class to start spring boot server.
+1. Application - void main class to start spring boot server.
 
-LoadData - This is a spring boot init class, this is the first class to get executed, when spring boot server is started. This init method calls the GetData Service class to load the data.
+2. LoadData - This is a spring boot init class, this is the first class to get executed, when spring boot server is started. This init method calls the GetData Service class to load the data.
 
-GetDataService  - This is a service which calls the LoadAndDirectory class to load the url content into RAMDirectory
+3. GetDataService  - This is a service which calls the LoadAndDirectory class to load the url content into RAMDirectory
 
-LoadAndSearchDirectory - Class to load data into RAMdirectory using index writer and Search the sub page url content based on the given search text
+4. LoadAndSearchDirectory - Class to load data into RAMdirectory using index writer and Search the sub page url content based on the given search text
 
-SearchController - This is rest service class, which get called every time, when we invoke the url to search.
+5. SearchController - This is rest service class, which get called every time, when we invoke the url to search.
 
 ## List of other important classes used in this NHSScraper Application:
 
-BaseScraper - Base scraper class to parse the web page and convert into Document
+6. BaseScraper - Base scraper class to parse the web page and convert into Document
 
-ConditionPageScraper - Child class of BaseScraper with additional functionality to get the conditions urls from main page
+7. ConditionPageScraper - Child class of BaseScraper with additional functionality to get the conditions urls from main page
 
-ConditionSubPageScraper  - Child class of BaseScraper with additional functionality to get the sub page url details such as title, url, content
+8. ConditionSubPageScraper  - Child class of BaseScraper with additional functionality to get the sub page url details such as title, url, content
 
-Page  - Class which has information of a page such as url, title and content
+9. Page  - Class which has information of a page such as url, title and content
 
-PageDocument - Class which has information of a web page
+10. PageDocument - Class which has information of a web page
 
-ConvertToJson - Class to convert the list of page object into JSON string
+11. ConvertToJson - Class to convert the list of page object into JSON string
 
-SearchResults - Class which stores the results of a search
+12. SearchResults - Class which stores the results of a search
 
-ApplicationConstants -  all constants used in Application
+13. ApplicationConstants -  all constants used in Application
 
-ScraperException - Exception class 
+14. ScraperException - Exception class 
 
-NhsScraperAppConfig - configuration class 
+15. NhsScraperAppConfig - configuration class 
+
+## List of Test classes used: 
+
+1. ConvertToJsonTest - Test class for convert Json class. Tested with hard coded page content
+
+2. LoadAndSearchDirectoryTest - Test class for loading the page content and search for a test.
+
+3. SearchControllerTest - Test class for Search Controller class. Consists of 8 test cases.
+
+4. ConditionPageScraperTest - Test class for Condition Page Scraper - home page scraper test
+
+5. ConditionSubpageScraperTest - Test class for Condition subpage Scraper - list of 22 subpages scraper test
   
-## Technology Stack
+## Technology Stack:
 
-1.Java 8
+1. Java 8
 
-2.Maven - Build
+2. Maven - Build
 
-3.JUnit - Unit Testing
+3. JUnit - Unit Testing
 
-4.Jackson - JSON conversion
+4. Jackson - JSON conversion
 
-5.JSoup - For parsing the web page
+5. JSoup - For parsing the web page
   
        
-## Assumptions
+## Assumptions:
   
-  1.This NHSScraperApplication includes only 22 sub page URL contents (Common conditions and Childhood conditions)
+  1. This NHSScraperApplication includes only 22 sub page URL contents (Common conditions and Childhood conditions)
   
-  2.http get method is used to search a text, so it has a limitation of 2,048 characters. 
+  2. HTTP get method is used to search a text, so it has a limitation of 2,048 characters. 
+   
+## Further Improvements:
+
+   1. Reduce time to execute  test cases.
   
