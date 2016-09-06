@@ -39,7 +39,7 @@ NHSScraperApplication is a REST service that scrapes the nhsChoice website ```(h
   
   ![Image of Test case2](https://github.com/HabiSheriff/Documentation/blob/master/Images/NHSScraperApplicationTestCase2.jpg)
     
-## This NHSScraper Application has below classes:
+## NHSScrperApplication Project Documentation:
 
 ## Sequence of execution flow:
 
@@ -99,7 +99,9 @@ NHSScraperApplication is a REST service that scrapes the nhsChoice website ```(h
 
 5. JSoup - For parsing the web page
 
-6. Apache Lucene 6.2.0  - for full text search
+6. Apache Lucene 6.2.0  - Full text search
+
+7. Spring boot 
   
        
 ## Assumptions:
@@ -111,4 +113,6 @@ NHSScraperApplication is a REST service that scrapes the nhsChoice website ```(h
 ## Further Improvements:
 
    1. Reduce time to execute  test cases.
+   
+   2. Offline implementation and test cases
   
